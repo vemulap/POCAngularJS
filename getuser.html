@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body id="demo-pg"  ng-app="myApp">
+	<div ng-controller="userController">
+		<ol ng-repeat="user in userData">
+			<li>{{user.balance}}</li>
+			<li>{{user.picture}}</li>
+			<li>{{user.age}}</li>
+			<li>{{user.eyeColor}}</li>
+			<li>{{user.name}}</li>
+			<li>{{user.gender}}</li>
+		</ol>
+	</div>
+
+<!-- load angular -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+	
+	var app = angular.module("myApp",[]);
+	app.controller('userController',['$scope','userService',function(scope,userService){
+	 scope.userData = [];
+	 scope.userData = userService.users;
+	 console.log(scope.userData); 
+	
+	}]);
+	app.service('userService',function(){
+		var users = [];
+		users = [
+			  {
+				"_id": "55e3ad5c93f893184b729820",
+				"index": 0,
+				"guid": "17aa850a-0697-4278-a276-ced534e71908",
+				"isActive": true,
+				"balance": "$1,749.78",
+				"picture": "http://placehold.it/32x32",
+				"age": 27,
+				"eyeColor": "green",
+				"name": "Barrett Erickson",
+				"gender": "male"
+			  },
+			  {
+				"_id": "55e3ad5cd0bc5ea2aace3fca",
+				"index": 1,
+				"guid": "268adea5-e30d-4e67-bf40-20fb690f01a5",
+				"isActive": false,
+				"balance": "$1,687.57",
+				"picture": "http://placehold.it/32x32",
+				"age": 25,
+				"eyeColor": "brown",
+				"name": "Stevenson Dennis",
+				"gender": "male"
+			  },
+			  {
+				"_id": "55e3ad5c242328772094f770",
+				"index": 2,
+				"guid": "86c4396e-c34b-4cdb-932c-c72d184c28da",
+				"isActive": true,
+				"balance": "$1,240.94",
+				"picture": "http://placehold.it/32x32",
+				"age": 22,
+				"eyeColor": "blue",
+				"name": "Bauer Kerr",
+				"gender": "male"
+			  },
+			  {
+				"_id": "55e3ad5c2c110b6505c3921a",
+				"index": 3,
+				"guid": "67f169a6-c92d-4595-b3e5-ee364981df2d",
+				"isActive": true,
+				"balance": "$1,623.80",
+				"picture": "http://placehold.it/32x32",
+				"age": 23,
+				"eyeColor": "blue",
+				"name": "Gloria Hopper",
+				"gender": "female"
+			  },
+			  {
+				"_id": "55e3ad5c37cada10a443757e",
+				"index": 4,
+				"guid": "ed46be05-8791-449b-b526-15f0a2eabaca",
+				"isActive": true,
+				"balance": "$2,199.70",
+				"picture": "http://placehold.it/32x32",
+				"age": 23,
+				"eyeColor": "green",
+				"name": "Booker Barry",
+				"gender": "male"
+			  },
+			  {
+				"_id": "55e3ad5cb393f9238b2c10be",
+				"index": 5,
+				"guid": "94de0056-51f1-4ea9-91ba-a7402d6147ac",
+				"isActive": true,
+				"balance": "$2,962.27",
+				"picture": "http://placehold.it/32x32",
+				"age": 27,
+				"eyeColor": "blue",
+				"name": "Monique Walter",
+				"gender": "female"
+			  },
+			  {
+				"_id": "55e3ad5caafd5c9067f38dd3",
+				"index": 6,
+				"guid": "947091c3-47ea-400d-b1ef-4a1a290df57c",
+				"isActive": false,
+				"balance": "$2,747.55",
+				"picture": "http://placehold.it/32x32",
+				"age": 31,
+				"eyeColor": "green",
+				"name": "Rutledge Hernandez",
+				"gender": "male"
+			  }
+			];
+	
+			return{
+				users
+			};
+			
+	});
+
+</script>
+
+
+</body>
+
+</html>
+
